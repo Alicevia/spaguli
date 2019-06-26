@@ -6,21 +6,20 @@ import {withRouter,Redirect} from 'react-router-dom'
 import memoryUtils from '../../utils/memoryUtils'
 import storageUtils from '../../utils/storageUtils'
  class Login extends Component {
-    constructor(props){
-        super(props)
-    }
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
-          if (!err) {
+        //   if (!err) {
             let {username,password} = values
             let result = await reqLoign(username,password)
-           
+            console.log(result)
             memoryUtils.user = result.data
             storageUtils.saveUser(result.data)
             this.props.history.push('/')
+
           
-        }
+            // }
         });
     }
     
@@ -76,3 +75,7 @@ import storageUtils from '../../utils/storageUtils'
 let login = Form.create()(Login)
 
 export default withRouter(login)
+
+
+
+

@@ -13,6 +13,7 @@
 
     }
     .header-bottom {
+
         display: flex;
         height: 40px;
         align-items: center;
@@ -24,14 +25,13 @@
             &::after {
                 content: '';
                 position: absolute;
-                bottom: -10px;
                 left: 50%;
-                width: 0;
-                height: 0;
-                border-right:15px solid transparent;
-                border-top:15px solid white;
-
-                transform: rotate(-135deg);
+                top: 100%;
+                border-top: 20px solid white;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid transparent;
+                border-left: 20px solid transparent;
+                transform: translateX(-50%)  
             }
         }
         .header-bottom-right {

@@ -27,9 +27,12 @@ export default function ajax(url, data={}, type='GET') {
     // 2. 如果成功了, 调用resolve(value)
     promise.then(response => {
       if (response.status===200 && response.data.status===0) {
-        resolve(response.data)
+
+        resolve(response.data) //相当于用resolve包裹你后面得到数据后的所有操作步骤
       }else {
         message.error(response.data.msg)
+        // reject(response.data.msg)
+        // console.log('失败')
       }
     // 3. 如果失败了, 不调用reject(reason), 而是提示异常信息
     }).catch(error => {

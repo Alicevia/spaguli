@@ -41,13 +41,13 @@ const confirm = Modal.confirm;
         let path = this.props.location.pathname
         let title;
         menuList.forEach(item=>{
-           if (item.key===path) {
+           if (path.indexOf(item.key)>-1) {
                title=item.title
                return;
            }
            if (item.children) {
                item.children.forEach(v=>{
-                   if (v.key===path) {
+                   if (path.indexOf(v.key)>-1) {
                        title=v.title
                        return
                    }
